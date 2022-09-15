@@ -307,6 +307,7 @@ var procDocs = function(idx){
   $.each(staff[idx]["Documents"],function(i,v){
     var doc=Object.assign(JSON.parse(JSON.stringify(docs[i])),v);
     doc['id']=i;
+    noExp=false;
     if (doc.hasOwnProperty("NoExpiry")){
       noExp=doc["NoExpiry"];
     }
@@ -358,7 +359,6 @@ var procDocs = function(idx){
     }
     newDocs[i]=doc;
   });
-
   staff[idx]['missData']=missData;
   var snt=$('#staff-'+idx);
   var nti=snt.find('.material-symbols-outlined');
@@ -470,17 +470,17 @@ var calcTenure = function(){
   var eded;
   var eta="";
   if (sde.val()=="") {
-    console.log('sde',sde);
+    // console.log('sde',sde);
     eta="Select Start Date";
   } else {
     sded=new Date(sde.val().replace(/-/, '/'));
-    console.log('sded',sded);
+    // console.log('sded',sded);
     if (ede.val()==""){
       eta=dateDiff(tNow,sded);
     } else {
-      console.log('ede',ede);
+      // console.log('ede',ede);
       eded=new Date(ede.val().replace(/-/, '/'));
-      console.log('eded',eded);
+      // console.log('eded',eded);
       if (eded<=sded){
         eta="Start Date <= End Date";
       } else {
@@ -488,7 +488,7 @@ var calcTenure = function(){
       }
     }
   }
-  console.log('eta',eta);
+  // console.log('eta',eta);
   etae.val(eta);
 }
 $(document).ready(function(){
