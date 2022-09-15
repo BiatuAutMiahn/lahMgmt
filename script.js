@@ -472,7 +472,7 @@ var calcTenure = function(){
     eta="Select Start Date";
   } else {
     sded==new Date(sde.val().replace(/-/, '/'));
-    if (e.val()==""){
+    if (ede.val()==""){
       eta=dateDiff(sded);
     } else {
       eded=new Date(ede.val().replace(/-/, '/'));
