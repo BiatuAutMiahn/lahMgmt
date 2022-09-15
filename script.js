@@ -469,20 +469,25 @@ var calcTenure = function(){
   var eded;
   var eta="";
   if (sde.val()=="") {
+    console.log('sde',sde);
     eta="Select Start Date";
   } else {
-    sded==new Date(sde.val().replace(/-/, '/'));
+    sded=new Date(sde.val().replace(/-/, '/'));
+    console.log('sded',sded);
     if (ede.val()==""){
       eta=dateDiff(sded);
     } else {
+      console.log('ede',ede);
       eded=new Date(ede.val().replace(/-/, '/'));
+      console.log('eded',eded);
       if (eded<=sded){
-        eta.val("Start Date <= End Date");
+        eta="Start Date <= End Date";
       } else {
         eta=dateDiff(eded,sded);
       }
     }
   }
+  console.log('eta',eta);
   etae.val(eta);
 }
 $(document).ready(function(){
