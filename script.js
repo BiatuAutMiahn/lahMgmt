@@ -453,6 +453,38 @@ var loadData = async function(){
   $('.name-tab').click(loadName);
   await $('.loading').css("display", "none");
 };
+var nsoEmpty = function(e){
+  var ie=$('#dlgSave');
+  if (e.val()==""){
+    ie.prop( "disabled",true);
+  } else {
+    ie.prop( "disabled",false);
+  }
+}
+var calcTenure = function(){
+  var sde=$('#se-sd');
+  var ede=$('#se-ed');
+  var etae=$('#se-ten');
+  var sded;
+  var eded;
+  var eta="";
+  if (sde.val()=="") {
+    eta="Select Start Date";
+  } else {
+    sded==new Date(sde.val().replace(/-/, '/'));
+    if (e.val()==""){
+      eta=dateDiff(sded);
+    } else {
+      eded=new Date(ede.val().replace(/-/, '/'));
+      if (eded<=sded){
+        eta.val("Start Date <= End Date");
+      } else {
+        eta=dateDiff(eded,sded);
+      }
+    }
+  }
+  etae.val(eta);
+}
 $(document).ready(function(){
   loadData();
   $(document).on('change', '.docstatussel', function() {
@@ -804,6 +836,7 @@ $(document).ready(function(){
     }
     sest.html(selstatops);
     sest.attr('data-initial',selstatinitial);
+    calcTenure();
     promise = new Promise(function (resolve, reject) {
         var ask_about_flag = true;
         if (ask_about_flag) {
@@ -1064,199 +1097,56 @@ $(document).ready(function(){
   });
   $(document).on('change', '#se-sd', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    var ded=$('#se-ed');
-    var detae=$('#se-ten');
-    var eta=dateDiff(e.val(),ded.val());
-    var dt=new Date();
-    var dedd=new Date(ded.val().replace(/-/, '/'));
-    var de=new Date(e.val().replace(/-/, '/'));
-    if ((e.val()!=""&&ded.val()!="")&&(de>dedd)) {
-      detae.val(eta);
-    } else {
-      if (ded.val()==""&&new Date(e.val().replace(/-/, '/'))>dt) {
-        eta=dateDiff(new Date(e.val().replace(/-/, '/')));
-        detae.val(eta);
-      } else {
-        detae.val('Start Date <= End Date');
-      }
-    }
-
-    isInitialDoc(this);
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
+    calcTenure();
+    // isInitialDoc(this);
   });
   $(document).on('change', '#se-ed', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    var dsd=$('#se-sd');
-    var detae=$('#se-ten');
-    if (e.val()!=""){
-      var eta=dateDiff(e.val().replace(/-/, '/'),dsd.val().replace(/-/, '/'));
-      if (e.val()!=""&&dsd.val()!=""&&new Date(e.val().replace(/-/, '/'))>new Date(dsd.val().replace(/-/, '/'))) {
-        detae.val(eta);
-      } else {
-        if (dsd.val()=="") {
-          detae.val('Select Start Date');
-        } else {
-          detae.val('Start Date <= End Date');
-        }
-      }
-    } else {
-        eta=dateDiff(new Date(dsd.val().replace(/-/, '/')));
-        detae.val(eta);
-    }
-    isInitialDoc(this);
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
+    // isInitialDoc(this);
   });
   $(document).on('keyup', '#se-fn', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
+    nsoEmpty();
   });
   $(document).on('keyup', '#se-mn', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-ln', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
+    nsoEmpty();
   });
   $(document).on('change', '#se-dob', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-ssn', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-cpn', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-eml', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-adl1', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-adl2', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-adcty', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-ads', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-adpc', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-adc', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    if (e.val()==""){
-      ie.prop( "disabled",true);
-    } else {
-      ie.prop( "disabled",false);
-    }
   });
   $(document).on('keyup', '#se-note', function() {
     isInitialStaff(this);
-    var e=$(this);
-    var ie=$('#dlgSave');
-    // if (e.val()==""&&){
-    //   ie.prop( "disabled",true);
-    // } else {
-    //   ie.prop( "disabled",false);
-    // }
   });
   $("#dlgDelete").click(function () {
     resolveGlobal(true);
