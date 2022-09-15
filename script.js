@@ -215,7 +215,7 @@ var loadName = async function(){
     dple.css('opacity',0);
     dple.css('display','none');
     see.prop( "disabled", false );
-    sde.prop( "disabled", false );
+    // sde.prop( "disabled", false );
   }
   if (docc.css('display') != 'none'){
     docc.css('opacity',0);
@@ -916,11 +916,11 @@ $(document).ready(function(){
     promise.then(function (v) {
         dlg.modal("hide");
         if (v) {
-          $.post("/",{ f: '4', p: JSON.stringify({id: sid}) },function(data) {
-            if (data=="Success"){
-              reloadData();
-            }
-          });
+          // $.post("/",{ f: '4', p: JSON.stringify({id: sid}) },function(data) {
+          //   if (data=="Success"){
+          //     reloadData();
+          //   }
+          // });
         }
     });
   });
