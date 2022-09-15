@@ -165,7 +165,7 @@ var docAdd = function(doc){
       isMandatory=doc["Mandatory"];
   }
 
-  if (doc.hasOwnProperty("RemainDays")){
+  if (!noExp&&doc.hasOwnProperty("RemainDays")){
     if (doc["RemainDays"]<=0) {
       docrow.addClass('row-alert');
     } else if (doc["RemainDays"]<=15) {
