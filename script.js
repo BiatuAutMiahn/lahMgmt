@@ -189,6 +189,8 @@ var docAdd = function(doc){
   rsdn.attr('data-initial',""+rsdn.val());
   if (noExp) {
     rsde.prop("disabled", true);
+    rsde.attr("type","text");
+    rsde.text("Never");
   }
   if(doc['Type']==0) {        //Training
     $('#doc-train-tbl').append(docrow);
