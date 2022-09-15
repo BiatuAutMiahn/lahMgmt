@@ -1107,6 +1107,7 @@ $(document).ready(function(){
   });
   $(document).on('change', '#se-ed', function() {
     isInitialStaff(this);
+    calcTenure();
     // isInitialDoc(this);
   });
   $(document).on('keyup', '#se-fn', function() {
