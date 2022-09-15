@@ -1039,7 +1039,7 @@ $(document).ready(function(){
           text : v['Name']
       }));
     });
-    rsds.val("-1")
+    das.val("-1")
     promise = new Promise(function (resolve, reject) {
         var ask_about_flag = true;
         if (ask_about_flag) {
