@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+purge/
+_backupDB/
+staff.json
+debuglog.json
+.htpasswd
+Init.pid

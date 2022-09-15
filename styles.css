@@ -1,0 +1,445 @@
+      html,body {
+        font-family: "Inconsolata", monospace;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -o-user-select: none;
+        color: white;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        font-size: 16px;
+        /* background: #2b2b2b; */
+        color: #3b3b3b;
+        transition: all .3s ease;
+      },
+      *{
+        transition: all .3s ease;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        max-width: 1115px;
+        margin: auto;
+        padding: 8px 8px;
+      }
+      .flex-table {
+        width: 100%;
+      }
+      .flex-table [class^='flex-table--'] {
+        display: flex;
+        width: 100%;
+      }
+      .flex-table [class^='flex-table--']:not(.flex-table--body):not(.flex-table--header) {
+        padding: 0.4em 0.2em;
+      }
+      .flex-table [class^='flex-table--'] span {
+        display: block;
+        flex: 1;
+        /*max-width: 12em;*/
+        padding: 0.4em  0em  0.4em  0em;
+      }
+        display: block;
+      .flex-table [class^='flex-table--'] .num {
+        flex: 1.5;
+      }
+      .flex-table [class^='flex-table--'] span:nth-child(1) {
+        flex: inherit;
+        margin-right: 8px;
+      }
+      .flex-table [class^='flex-table--'] span:nth-child(2) {
+        flex: 3;
+        max-width: 15em;
+      }
+      .flex-table [class^='flex-table--'] span:nth-child(4) {
+        flex: 3;
+
+      }
+      .flex-table [class^='flex-table--'] span:nth-child(5) {
+        flex: 3;
+
+      }
+      .flex-table [class^='flex-table--'] .num:nth-child(2) {
+        flex: 3;
+        max-width: 18em;
+      }
+      .flex-table .flex-table--header {
+        background: #4965a7;
+        color: #fff;
+        //margin-bottom: 0.6em;
+        box-shadow: 2px 2px 6px -2px rgba(34, 34, 34, 0.2);
+        border-radius: 8px 8px 0 0;
+      }
+      .flex-table .flex-table--body {
+      overflow: hidden;
+        flex-direction: column;
+        background: #f6f6f6;
+        box-shadow: 5px 5px 10px -1px rgba(34, 34, 34, 1);
+        border-radius: 0 0 8px 8px;
+      }
+      .flex-table .flex-table--row {
+        position: relative;
+        overflow:hidden;
+      }
+      .flex-table .flex-table--row:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+      .flex-table .flex-table--row:nth-child(even) {
+        background: #e9e9e9;
+      }
+      .flex-table .flex-table--row:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: #fff;
+        height: 10px;
+        width: 10px;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        border-radius: 50%;
+        opacity: 0;
+      }
+      .hidden {
+          height: 0em;
+          padding: 0em 0.2em !important;
+          -webkit-transition: height 0.5s ease,padding 0.5s ease !important;
+             -moz-transition: height 0.5s ease,padding 0.5s ease !important;
+              -ms-transition: height 0.5s ease,padding 0.5s ease !important;
+               -o-transition: height 0.5s ease,padding 0.5s ease !important;
+                  transition: height 0.5s ease,padding 0.5s ease !important;
+      }
+
+      .hidden-open {
+           height: 3em;
+           padding: 0.4em 0.2em !important;
+           -webkit-transition: height 0.5s ease,padding 0.5s ease !important;
+              -moz-transition: height 0.5s ease,padding 0.5s ease !important;
+               -ms-transition: height 0.5s ease,padding 0.5s ease !important;
+                -o-transition: height 0.5s ease,padding 0.5s ease !important;
+                   transition: height 0.5s ease,padding 0.5s ease !important;
+      }
+      .mgmt-btn {
+    background-color: #A0A0A0;
+    border-radius: 0.2em;
+    margin: 0em 0.1em;
+    padding: 0.06em 0em 0em 0.3em;
+    width: 1.3em;
+      }
+      .mgmt-btn:hover {
+        background-color: #C0C0C0;
+      }
+      .mgmt-btn:active {
+        background-color: #909090;
+      }
+      .row-error{
+        background-color: #ffa8a8 !important;
+      }
+
+      .row-abtdue{
+        background-color: #ffd4a8 !important;
+      }
+
+      .row-term{
+        background-color: #141414 !important;
+        color: #fff !important;
+      }
+
+      .row-alert:not(.name-tab){
+        background-color: #ff6666 !important;
+        color: black;
+        /* color: #fff !important; */
+      }
+
+      .row-warn30:not(.name-tab){
+        background-color: #ff9933 !important;
+        color: black;
+        /*   */
+      }
+
+      .row-warn90:not(.name-tab){
+        background-color: #ffe566 !important;
+        color: black;
+        /* color: #fff !important; */
+      }
+
+      .row-warn180{
+        background-color: #ffa05c !important;
+        color: #fff !important;
+      }
+
+      .row-train{
+        background-color: #141414 !important;
+        color: #fff !important;
+      }
+
+      .row-due{
+        background-color: #ffd4a8 !important;
+      }
+
+      .span-num {
+        text-align: right;
+        max-width:4em;
+      }
+
+      #loader {
+          overflow:hidden;
+      }
+      .loader-container {
+        animation: rotate 1s linear infinite;
+      }
+
+      .loader-container .path {
+        stroke: #fff;
+        animation: dash 1.5s ease-in-out infinite;
+      }
+
+      @keyframes rotate {
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 1, 150;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 90, 150;
+          stroke-dashoffset: -35;
+        }
+        100% {
+          stroke-dasharray: 90, 150;
+          stroke-dashoffset: -124;
+        }
+      }
+       .tbl-section {
+          background: #4975a7 !important;
+       }
+ #nametabs-term .name-tab:not(.active) {
+   background-color: #bbb !important;
+   color:#000;
+ }
+ #nametabs-term .name-tab:not(.active)  .staff-status-icon {
+   border-color: #000 !important;
+   background-color: #555 !important;
+   color:#fff;
+ }
+ #nametabs-term .name-tab.active  .staff-status-icon {
+   border-color: #000 !important;
+   background-color: #bbb !important;
+   color:#000;
+ }
+
+.staff-list-container {
+  position: absolute;
+  left: 8px;
+  top: 60px;
+  width: 300px;
+  bottom: 8px;
+  border: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.staff-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-doc-container {
+  position: absolute;
+  left: 314px;
+  right: 8px;
+  overflow: hidden;
+  bottom: 8px;
+  top: 8px;
+  border: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+}
+.staff-doc {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.staff-detail-container {
+  position:absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+  background: #1b1b1bbf;
+  display: flex;
+}
+
+.staff-detail-dialog {
+  position:relative;
+  width: 75%;
+  height:300px;
+  background: #fff;
+  border-radius: 10px;
+  /* padding: 0em 0em 0em 0em; */
+  /*margin:2em auto 2em auto;*/
+}
+.staff-detail-tab-content{
+  background: #fff;
+  position:absolute;
+}
+
+
+#doc-contain {
+  /* transition: opacity .1s cubic-bezier(0.65, 0.05, 0.36, 1); */
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+}
+
+.staff-btns .btn:not(:first-child) {
+  border-left: 1px solid #014c88; /*#86c7fe; */
+}
+
+
+.btn-nopadding{
+    padding: 0px;
+
+    display: -webkit-inline-box;
+    margin: 0.2em 0 0.2em 0.2em;
+}
+.btn-padding{
+  padding: 0.8em 4em 0.5em 0.4em;
+}
+
+/* if you want divider to left / logo at right */
+.btn-divider-left{
+    border-left: 1px solid rgba(0,0,0,0.2);; /* set your color here */
+}
+
+/* if you want divider to right / logo at left */
+.btn-divider-right{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.row-missdat {
+  background-color: #f7b5ec !important;
+  color: black;
+  /* color: #fff !important; */
+}
+.row-missdat .staff-status-icon {
+  border-color: #86417b !important;
+  /* background-color: #fc9cec !important; */
+  background-color: #fa85d3 !important;
+
+}
+.row-missdat.name-tab:not(.active){
+  /* border-color: #86417b !important; */
+  background-color: #fdcef5;
+}
+
+
+.staff-status-icon {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  border-radius: 4px;
+  width: 36px;
+  margin:-2px;
+  /* border: 2px solid #878787; */
+  border: 2px solid #487e44;
+  /* background-color: #e6e6e6; */
+  background-color: #00ff5d;
+
+
+}
+.row-warn90 .staff-status-icon{
+  border-color: #857a40;
+  background-color: #fcec9c;
+}
+.row-warn30 .staff-status-icon{
+  border-color: #805328;
+  background-color: #f4b06c;
+}
+.row-alert .staff-status-icon{
+  border-color: #7e3a39;
+  background-color: #f28f8d;
+}
+
+.staff-label {
+  font-size: 18px;
+  display: flex;
+  text-align: left;
+  padding: 0.2em;
+  padding: 0.2em 0.4em;
+}
+
+.name-tab.active .staff-label {
+  color: #fff;
+}
+.row-term.name-tab:not(.active){
+  background-color: #14141466 !important;
+  color: #fff !important;
+}
+
+.row-alert.name-tab:not(.active){
+  background-color: #ff666666 !important;
+  color: black;
+  /* color: #fff !important; */
+}
+
+.row-warn30.name-tab:not(.active){
+  background-color: #ff993366 !important;
+  color: black;
+  /*   */
+}
+
+.row-warn90.name-tab:not(.active){
+  background-color: #ffe56666 !important;
+  color: black;
+  /* color: #fff !important; */
+}
+
+.form-label-group.error .form-control {
+    color: #292121;
+    background-color: #fff;
+    border-color: rgb(254 134 134);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem hsl(0deg 98% 52% / 25%);
+}
+.form-label-group.error input:not(:placeholder-shown)~label {
+  color: #ff3939;
+}
+.name-tab.active .staff-status-icon {
+  border-color: #000;
+}
+.name-tab.active {
+  border-color: #000 !important;
+}
+.name-tab:hover{
+  color:black;
+}
+.name-tab.active {
+  color:black !important;
+  background-color: #4d4d4d!important;
+}
+.name-tab{
+  color:black;
+  background-color: #8affcf;
+  border-radius: 4px;
+}

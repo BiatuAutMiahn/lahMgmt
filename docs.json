@@ -1,0 +1,198 @@
+{
+  "DB":{
+    "LastModified": "2023-12-29T00:00:00.000Z"
+  },
+     "0": {
+          "Name": "DSP Training",
+          "Type": 0,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 365,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true,
+          "Notes": "DODD/DSP, 8I4O, 8 Hr Intitial 4 Hrs Ongoing"
+     },
+     "1": {
+          "Name": "BCI Check",
+          "Type": 0,
+          "Status": [
+               2,
+               3,
+               4,
+               5
+          ],
+          "Duration": 365,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true,
+          "NoExpiry": true
+     },
+     "2": {
+          "Name": "ARCS Background Check",
+          "Type": 2,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 1825,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true
+     },
+     "3": {
+          "Name": "CPR/AED/FA Training",
+          "Type": 0,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 730,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true
+     },
+     "4": {
+          "Name": "Med Admin",
+          "Type": 0,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 365,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": false,
+          "Notes": "2 Hour course.",
+          "Depends": ["14"]
+     },
+     "5": {
+          "Name": "Annual Abuser Registry Ack",
+          "Type": 1,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 365,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true
+     },
+     "7": {
+          "Name": "MUI Training",
+          "Type": 0,
+          "Status": [
+               0,
+               1
+          ],
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true
+     },
+     "8": {
+          "Name": "Annual Health/Safety Ack",
+          "Type": 1,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 365,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true,
+          "Notes": "Staff must Ack DODD Health/Safety Alerts."
+     },
+     "9": {
+          "Name": "FBI Background Check",
+          "Type": 2,
+          "Status": [
+               2,
+               3,
+               4,
+               5
+          ],
+          "Duration": 365,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": false
+     },
+     "10": {
+          "Name": "Driver's License",
+          "Status": [
+               0,
+               1
+          ],
+          "Type": 3,
+          "idType": [
+               "Permit",
+               "ID",
+               "Driver's License"
+          ],
+          "Expires": null,
+          "Class": [
+               "D",
+               "DJ",
+               "A",
+               "B",
+               "C",
+               "E",
+               "M",
+               "MJ"
+          ],
+          "Issued": null,
+          "Restrictions": 2,
+          "Sex": [
+               "Male",
+               "Female"
+          ],
+          "Height": 2,
+          "Eye Color": 2,
+          "DOB": 3,
+          "Mandatory": true,
+          "State Issued": 2,
+          "Street Address":2,
+          "City":2,
+          "Zip":1
+     },
+     "11": {
+          "Name": "Drivers Abstract",
+          "Type": 2,
+          "Status": [
+               0,
+               1
+          ],
+          "International": 0,
+          "Duration": 730,
+          "Expires": null,
+          "Mandatory": true,
+          "Notes": "If staff has +6 pts, cannot transport clients"
+     },
+     "13": {
+          "Name": "Auto Insurance",
+          "Type": 4,
+          "Status": [
+               0,
+               1
+          ],
+          "Duration": 182.5,
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": false
+     },
+     "14": {
+          "Name": "High School Diploma/Equiv.",
+          "Type": 2,
+          "Status": [
+               7,
+               8,
+               6
+          ],
+          "Issued": null,
+          "Expires": null,
+          "Mandatory": true,
+          "NoExpiry":true,
+          "Notes": "Waiver expires 2yrs"
+     }
+}
