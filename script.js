@@ -73,6 +73,9 @@ var docAdd = function(doc){
         <td>
           <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
             <input id="row-staff-doc-notes" type="text" class="form-control docnote">
+            <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteedit">
+              <span class="material-symbols-outlined">edit_note</span>
+            </button>
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
@@ -80,6 +83,9 @@ var docAdd = function(doc){
         </td>
         <td class="text-center">
           <div class="btn-group btn-group-sm" role="group" style="background-color: #fff;border-radius: 4px;">
+            <button type="button" class="btn btn-primary docform" disabled>
+              <span class="material-symbols-outlined">attach_file</span>
+            </button>
             <button type="button" class="btn btn-primary docreset" disabled>
               <span class="material-symbols-outlined">settings_backup_restore</span>
             </button>
