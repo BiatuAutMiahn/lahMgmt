@@ -1,4 +1,5 @@
 var now = new Date();
+var tNow = now;
 var tmpl;
 var staff;
 var docs;
@@ -475,7 +476,7 @@ var calcTenure = function(){
     sded=new Date(sde.val().replace(/-/, '/'));
     console.log('sded',sded);
     if (ede.val()==""){
-      eta=dateDiff(sded);
+      eta=dateDiff(tNow,sded);
     } else {
       console.log('ede',ede);
       eded=new Date(ede.val().replace(/-/, '/'));
