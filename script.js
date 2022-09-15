@@ -607,7 +607,7 @@ $(document).ready(function(){
     seacty.val('');
     seas.val('');
     seap.val('');
-    seac.val('');
+    seac.val('United States');
     sen.val('');
     sest.attr('data-initial','');
     sefn.attr('data-initial','');
@@ -624,7 +624,7 @@ $(document).ready(function(){
     seacty.attr('data-initial','');
     seas.attr('data-initial','');
     seap.attr('data-initial','');
-    seac.attr('data-initial','');
+    seac.attr('data-initial',seac.val());
     sen.attr('data-initial','');
 
     var selstatops="";
