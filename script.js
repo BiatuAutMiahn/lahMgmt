@@ -190,7 +190,7 @@ var docAdd = function(doc){
   if (noExp) {
     rsde.prop("disabled", true);
     rsde.attr("type","text");
-    rsde.text("Never");
+    rsde.val("Never");
   }
   if(doc['Type']==0) {        //Training
     $('#doc-train-tbl').append(docrow);
