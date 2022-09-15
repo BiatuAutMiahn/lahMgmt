@@ -40,20 +40,25 @@
     </div>
     <div class="container vtabs" style="">
       <div>
-        <div style="position: absolute;left: 8px;top: 8;width: 192px;height: 42px;overflow: none;border-right-style: solid;border-bottom-style: solid;border-start-end-radius: 35;border-radius: 8px;border-width: 1px;padding: 4px;background-color: #0000001b;" class="text-center">
-          <div class="staff-btns btn-group btn-group-sm" role="group">
-            <button type="button" class="btn btn-primary" id="staffadd">
-              <span class="material-symbols-outlined">person_add</span>
-            </button>
-            <button type="button" class="btn btn-primary" id="staffedit" disabled>
-              <span class="material-symbols-outlined">manage_accounts</span>
-            </button>
-            <button type="button" class="btn btn-primary" id="staffdel" disabled>
-              <span class="material-symbols-outlined">person_remove</span>
-            </button>
-            <button type="button" class="btn btn-primary" id="staffreload">
-              <span class="material-symbols-outlined">refresh</span>
-            </button>
+        <div class="text-center staff-actions-contain">
+          <div class="staff-actions-buttons">
+            <div class="staff-btns btn-group btn-group-sm" role="group">
+              <button type="button" class="btn btn-primary" id="staffadd" title="Add Staff">
+                <span class="material-symbols-outlined">person_add</span>
+              </button>
+              <button type="button" class="btn btn-primary" id="staffedit" title="Edit Staff" disabled>
+                <span class="material-symbols-outlined">manage_accounts</span>
+              </button>
+              <button type="button" class="btn btn-primary" id="staffdel" title="Delete Staff (Disabled)" disabled>
+                <span class="material-symbols-outlined">person_remove</span>
+              </button>
+              <button type="button" class="btn btn-primary" id="staffsign" title="Staff Sign-Off" disabled>
+                <span class="material-symbols-outlined">checklist_rtl</span>
+              </button>
+              <button type="button" class="btn btn-primary" id="staffreload" title="Sync Data">
+                <span class="material-symbols-outlined">sync</span>
+              </button>
+            </div>
           </div>
         </div>
         <div class="staff-list-container" id="leftbar">

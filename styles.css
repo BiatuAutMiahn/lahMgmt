@@ -443,3 +443,23 @@
   background-color: #8affcf;
   border-radius: 4px;
 }
+.staff-actions-contain {
+  position: absolute;
+  left: 8px;
+  top: 8;
+  width: 300px;
+  overflow: none;
+  border-start-end-radius: 35;
+  display: flex;
+}
+.staff-actions-buttons {
+  position: relative;
+  background-color: #0000001b;
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 4px;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  margin: 0 auto;
+  border-radius: .375rem;
+}
