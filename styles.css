@@ -463,3 +463,24 @@
   margin: 0 auto;
   border-radius: .375rem;
 }
+.tblr-doc-name {
+  max-width: 1em;
+}
+.tblr-doc-status {
+  max-width: 1em;
+}
+.tblr-doc-issued {
+  max-width: 1em;
+}
+.tblr-doc-expires {
+  max-width: 1em;
+}
+.tblr-doc-eta {
+  max-width: 1em;
+}
+.tblr-doc-notes {
+  max-width: 1em;
+}
+.tblr-doc-actions {
+  max-width: 1em;
+}
