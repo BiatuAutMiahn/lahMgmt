@@ -1028,6 +1028,10 @@ $(document).ready(function(){
     var sid=parseInt(pe[0].id.replace('staff-',''));
     var das=$('#docAddSel');
     das.empty();
+    das.append($('<option>', {
+        value: "-1",
+        text : ""
+    }));
     $.each(docs,function(i,v){
       if (i=='DB') { return }
       das.append($('<option>', {
@@ -1035,6 +1039,7 @@ $(document).ready(function(){
           text : v['Name']
       }));
     });
+    rsds.val("-1")
     promise = new Promise(function (resolve, reject) {
         var ask_about_flag = true;
         if (ask_about_flag) {
