@@ -76,10 +76,16 @@ var docAdd = function(doc){
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
+            <button id="row-staff-doc-note-edit" type="button" class="btn btn-primary docnoteedit" disabled>
+              <span class="material-symbols-outlined">edit_note</span>
+            </button>
           </div>
         </td>
         <td class="text-center">
           <div class="btn-group btn-group-sm" role="group" style="background-color: #fff;border-radius: 4px;">
+            <button type="button" class="btn btn-primary docform" disabled>
+              <span class="material-symbols-outlined">attach_file</span>
+            </button>
             <button type="button" class="btn btn-primary docreset" disabled>
               <span class="material-symbols-outlined">settings_backup_restore</span>
             </button>
@@ -189,6 +195,9 @@ var docAdd = function(doc){
   rsdn.attr('data-initial',""+rsdn.val());
   if (noExp) {
     rsde.prop("disabled", true);
+    rsde.attr("type","text");
+    rsde.val("Never");
+    rsdt.text('-');
   }
   if(doc['Type']==0) {        //Training
     $('#doc-train-tbl').append(docrow);
