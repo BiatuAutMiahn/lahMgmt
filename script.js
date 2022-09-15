@@ -186,7 +186,9 @@ var docAdd = function(doc){
   rsdi.attr('data-initial',""+rsdi.val());
   rsde.attr('data-initial',""+rsde.val());
   rsdn.attr('data-initial',""+rsdn.val());
-
+  if (noExp) {
+    rsde.prop("readonly", true);
+  }
   if(doc['Type']==0) {        //Training
     $('#doc-train-tbl').append(docrow);
   } else if(doc['Type']==2) { //Certification
