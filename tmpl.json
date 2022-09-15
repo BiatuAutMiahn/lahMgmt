@@ -1,0 +1,57 @@
+{
+  "DB":{
+    "LastModified": "2023-12-29T00:00:00.000Z"    
+  },
+	"Staff": {
+		"Status": null,
+		"Tenure": null,
+		"Role": null,
+		"Name": {
+			"Last": null,
+			"First": null,
+			"Middle": null
+		},
+		"Contact": {
+			"Phone": {
+				"Home": null,
+				"Cell": null,
+				"Work": null,
+				"Other": null
+			},
+			"Street Address": null,
+			"City": null,
+			"State": null,
+			"Zip": null
+		},
+		"History": {},
+		"Documents": {}
+	},
+
+	"DocStatus": {
+		"-1": "",
+		"0": "Active",
+		"1": "Expired",
+		"2": "Completed",
+		"3": "Not Completed",
+		"4": "Exception",
+		"5": "Pending",
+		"6": "Waived",
+		"7": "Yes",
+		"8": "No"
+	},
+
+	"DocType": {
+		"0": "Training",
+		"1": "Coaching",
+		"2": "Certification",
+		"3": "Licensing"
+	},
+  
+	"UserStatus": {
+		"-1": "",
+		"0": "Active",
+		"1": "Onboarding",
+		"2": "Suspended",
+		"3": "Terminated"
+	}
+}

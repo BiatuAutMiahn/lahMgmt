@@ -1,0 +1,369 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/theme.min.css" integrity="sha512-hbs/7O+vqWZS49DulqH1n2lVtu63t3c3MTAn0oYMINS5aT8eIAbJGDXgLt6IxDHcWyzVTgf9XyzZ9iWyVQ7mCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-5-vertical-tabs@2.0.0/dist/b5vtabs.min.css" integrity="sha384-AsoWNxsuu73eGp2MPWHa77155fyqP9rueKOeG4t2d/AD4eyBqL20TClzfbAkrul4" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js" integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/exacti/floating-labels@latest/floating-labels.min.css" media="screen">
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js" integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <style>
+
+    </style>
+    <script>
+    </script>
+  </head>
+  <body>
+    <div class="loading" style="background-color: #000000bf; position: absolute; width: 100%; height: 100%; left:0; top:0; z-index:9999; display: flex;">
+        <div id="loader" style="margin: auto;">
+          <span></span>
+          <svg class="loader-container" width="100px" height="100px" viewBox="0 0 52 52">
+            <circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke="white" stroke-width="4px"></circle>
+          </svg>
+        </div>
+    </div>
+    <div class="container vtabs" style="">
+      <div>
+        <div style="position: absolute;left: 8px;top: 8;width: 192px;height: 42px;overflow: none;border-right-style: solid;border-bottom-style: solid;border-start-end-radius: 35;border-radius: 8px;border-width: 1px;padding: 4px;background-color: #0000001b;" class="text-center">
+          <div class="staff-btns btn-group btn-group-sm" role="group">
+            <button type="button" class="btn btn-primary" id="staffadd">
+              <span class="material-symbols-outlined">person_add</span>
+            </button>
+            <button type="button" class="btn btn-primary" id="staffedit" disabled>
+              <span class="material-symbols-outlined">manage_accounts</span>
+            </button>
+            <button type="button" class="btn btn-primary" id="staffdel" disabled>
+              <span class="material-symbols-outlined">person_remove</span>
+            </button>
+            <button type="button" class="btn btn-primary" id="staffreload">
+              <span class="material-symbols-outlined">refresh</span>
+            </button>
+          </div>
+        </div>
+        <div class="staff-list-container" id="leftbar">
+          <div class="staff-list">
+            <div class="nav nav-tabs left-tabs" style="display:contents;" id='nametabs'>
+            </div>
+            <button type="button" class="collapsible" style="background-color: #000000cc;color: #fff;border-radius: 8px;">Show Terminated</button>
+            <div class="content" style="display:block;" class="nav nav-tabs left-tabs" id='nametabs-term'>
+            </div>
+          </div>
+        </div>
+        <div class="staff-doc-container">
+          <div class="staff-doc">
+            <div style="/*position: absolute;*/" id="accordion-left-tabs" class="ccordion">
+              <div id="doc-placeholder" style="display:block;opacity:1;">
+                <h1 id='selstpl'>Select staff member to begin.</h1>
+              </div>
+              <div id="doc-contain" style="display:none;opacity:0;">
+                <h1 id='staffname'></h1>
+                </br>
+                <div class="card">
+                  <div class="text-white bg-primary card-header d-flex justify-content-between align-items-center">
+                    Certifications
+                    <button id="staffDocAdd" type="button" class="btn btn-sm btn-primary"><span class="material-symbols-outlined">note_add</span></button>
+                  </div>
+                  <table style="margin-bottom:0;" class="card-table table table-sm table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col" style="min-width:150px;">Status</th>
+                        <th scope="col">Issued</th>
+                        <th scope="col">Expires</th>
+                        <th scope="col">ETA</th>
+                        <th scope="col" style="min-width:150px;">Notes</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbllrow" id="doc-cert-tbl">
+                    </tbody>
+                  </table>
+                </div>
+                </br>
+                <div class="card">
+                  <div class="text-white bg-primary card-header d-flex justify-content-between align-items-center">
+                    Licensing
+                  </div>
+                  <table style="margin-bottom:0;" class="card-table table table-sm table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Issued</th>
+                        <th scope="col">Expires</th>
+                        <th scope="col">ETA</th>
+                        <th scope="col">Notes</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbllrow" id="doc-lic-tbl">
+                    </tbody>
+                  </table>
+                </div>
+                </br>
+                <div class="card">
+                  <div class="text-white bg-primary card-header d-flex justify-content-between align-items-center">
+                    Training
+                  </div>
+                  <table style="margin-bottom:0;" class="card-table table table-sm table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Issued</th>
+                        <th scope="col">Expires</th>
+                        <th scope="col">ETA</th>
+                        <th scope="col">Notes</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbllrow" id="doc-train-tbl">
+                    </tbody>
+                  </table>
+                </div>
+                </br>
+                <div class="card">
+                  <div class="text-white bg-primary card-header d-flex justify-content-between align-items-center">
+                    Other
+                  </div>
+                  <table style="margin-bottom:0;" class="card-table table table-sm table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Issued</th>
+                        <th scope="col">Expires</th>
+                        <th scope="col">ETA</th>
+                        <th scope="col">Notes</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbllrow" id="doc-other-tbl">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="dlgDelete" tabindex="-1" aria-labelledby="confdel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dlgTitle">Confirm Delete</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="dlgText">
+            Are you sure you want to delete this document?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="dlgCancel">Cancel</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="dlgDelete">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="dlgDocAdd" tabindex="-1" aria-labelledby="docadd" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dlgTitle">Add Document</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="dlgText">
+            <select id="docAddSel" class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option default hidden>Select Document</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="dlgCancel">Cancel</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="dlgAdd">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="dlgNotify" tabindex="-1" aria-labelledby="confdeldoc" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dlgTitle"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="dlgText" class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-lg fade" id="dlgStaffEdit" tabindex="-1" aria-labelledby="dlgStaffEdit" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dlgStaffEditTitle"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="dlgText" class="modal-body">
+            <label for="exampleDataList" class="form-label" style="margin: 0em 0em 0em 0em;">Work Detail</label>
+            <hr style="margin: 10px 0; height: 3px;", color=black>
+            <div class="row">
+              <div class="col">
+                  <div class="form-label-group">
+                    <select class="form-select" style="padding-bottom: 0.5em;" id="se-stat" aria-label="Status">
+                    </select>
+                    <label for="floatingSelectGrid">Status</label>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <div class="form-label-group">
+                    <input type="date" class="form-control" id="se-sd" placeholder="" value="">
+                    <label for="floatingInputGrid">Approx. Start Date</label>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="form-label-group">
+                    <input type="date" class="form-control" id="se-ed" placeholder="" value="">
+                    <label for="floatingInputGrid">End Date</label>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="form-label-group">
+                    <input type="text" class="form-control" id="se-ten" placeholder="" value="" readonly>
+                    <label for="floatingInputGrid">Tenure</label>
+                  </div>
+              </div>
+            </div>
+            <label for="exampleDataList" class="form-label" style="margin: 0em 0em 0em 0em;">Personal Detail</label>
+            <hr style="margin: 10px 0; height: 3px;", color=black>
+            <div class="row">
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-fn" placeholder="" value="">
+                  <label for="floatingInputGrid">First Name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-mn" placeholder="" value="">
+                  <label for="floatingInputGrid">Middle Name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-ln" placeholder="" value="">
+                  <label for="floatingInputGrid">Last Name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <div class="form-label-group">
+                    <input type="date" class="form-control" id="se-dob" placeholder="" value="">
+                    <label for="floatingInputGrid">DOB</label>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-ssn" placeholder="XXX-XX-XXXX" value="">
+                  <label for="floatingInputGrid">SSN</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <div class="form-label-group">
+                    <input type="text" class="form-control" id="se-cpn" placeholder="" value="">
+                    <label for="floatingInputGrid">Phone</label>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-eml" placeholder="" value="">
+                  <label for="floatingInputGrid">Email</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-adl1" placeholder="" value="">
+                  <label for="floatingInputGrid">Address Line 1</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-adl2" placeholder="" value="">
+                  <label for="floatingInputGrid">Address Line 2</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-adcty" placeholder="" value="">
+                  <label for="floatingInputGrid">City</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-ads" placeholder="" value="">
+                  <label for="floatingInputGrid">State</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-adpc" placeholder="" value="">
+                  <label for="floatingInputGrid">Postal Code</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-label-group">
+                  <input type="text" class="form-control" id="se-adc" placeholder="" value="">
+                  <label for="floatingInputGrid">Country</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-label-group">
+              <textarea class="form-control" placeholder="" id="se-note" style="right: 100%"></textarea>
+              <label for="floatingTextarea2">Notes</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="dlgCancel">Cancel</button>
+            <button type="button" class="btn btn-primary" id="dlgSave" disabled>Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- <Staff General> -->
+  <!-- </Staff General> -->
+  <!-- <Staff Staff Documents> -->
+  <!-- </Staff General> -->
+  <!-- <Staff General> -->
+  <!-- </Staff General> -->
+
+
+</html>
