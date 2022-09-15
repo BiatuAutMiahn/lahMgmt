@@ -7,26 +7,10 @@ var dpl=true;
 var resolveGlobal;
 var tNull=new Date("1970-01-01T00:00:00.000Z");
 
-/*
-
--Add Phone/Email for Staff Data
--Fix Missing Data Status not working (Wallace, James)
--Fix Tenure not Corrently Updating when changing start date when end date is empty on staff edit.
--When Updating Expired/Issued Document Dates, automatically populate empty field if doc['Duration'] exists.
-    -If updaing Issued and Issued+Duration>Expires, update Expiration Date.
--Automatically Change status??
--Staff list Update not reloading active staff docs.
--Docs needs a 'form' button for filling out doc templates
--Notes, add multiline button.
--If doc has NoExpiry, make Expires field Read Only (If status is No/Yes Only)
--Search
--Research Calenders
-
-*/
-
 var sleep = function(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
 var dateDiff = function(startingDate, endingDate) {
   let startDate = moment(startingDate);
   let endDate = moment(endingDate);
