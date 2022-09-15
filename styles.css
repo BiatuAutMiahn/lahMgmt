@@ -463,3 +463,31 @@
   margin: 0 auto;
   border-radius: .375rem;
 }
+.tblr-doc-name {
+  width: 250px;
+  min-width: 250px;
+
+}
+.tblr-doc-status {
+  width: 150px;
+  min-width: 150px;
+}
+.tblr-doc-issued {
+  width: 100px;
+  min-width: 100px;
+}
+.tblr-doc-expires {
+  width: 100px;
+  min-width: 100px;
+}
+.tblr-doc-eta {
+  width: 100px;
+  min-width: 100px;
+}
+.tblr-doc-notes {
+  /* max-width: 1em; */
+  min-width: 20em;
+}
+.tblr-doc-actions {
+  width: 180px;
+}
