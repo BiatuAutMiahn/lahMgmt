@@ -787,7 +787,6 @@ $(document).ready(function(){
         sed=formatDate(sed);
       };
     }
-    var sc=s['Contact'];
     $("#dlgNotify").prop( "disabled",true);
     sefn.val(snm['First']);
     semn.val(snm['Middle']);
@@ -796,14 +795,22 @@ $(document).ready(function(){
     sesd.val(ssd);
     seed.val(sed);
     sesn.val(s['SSN']);
-    sepn.val(sc['Phone']['Cell']);
-    seem.val(sc['Email']);
-    seal1.val(sc['Address1']);
-    seal2.val(sc['Address2']);
-    seacty.val(sc['City']);
-    seas.val(sc['State']);
-    seap.val(sc['Zip']);
-    seac.val(sc['Country']);
+    var sc;
+    if (s.hasOwnProperty("Contact")){
+      sc=s['Contact']
+      if (sc.hasOwnProperty("Phone")){
+        if (sc['Phone'].hasOwnProperty("Cell")){
+          sepn.val(sc['Phone']['Cell']);
+        }
+      }
+      seem.val(sc['Email']);
+      seal1.val(sc['Address1']);
+      seal2.val(sc['Address2']);
+      seacty.val(sc['City']);
+      seas.val(sc['State']);
+      seap.val(sc['Zip']);
+      seac.val(sc['Country']);
+    }
     sen.val(s['Notes']);
     sefn.attr('data-initial',sefn.val());
     semn.attr('data-initial',semn.val());
