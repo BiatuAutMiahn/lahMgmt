@@ -191,6 +191,7 @@ var docAdd = function(doc){
     rsde.prop("disabled", true);
     rsde.attr("type","text");
     rsde.val("Never");
+    rsdt.text('-');
   }
   if(doc['Type']==0) {        //Training
     $('#doc-train-tbl').append(docrow);
