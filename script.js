@@ -511,17 +511,17 @@ var cmfStaffDlg = function(e){
   var seln=$('#se-ln');
   var nos=false;
   if (sest.val()==""){
-    nos=True;
+    nos=true;
   } else {
     sest.removeClass("form-field-error");
   }
   if (sefn.val()==""){
-    nos=True;
+    nos=true;
   } else {
     sest.removeClass("form-field-error");
   }
   if (seln.val()==""){
-    nos=True;
+    nos=true;
   } else {
     sest.removeClass("form-field-error");
   }
@@ -1224,14 +1224,12 @@ $(document).ready(function(){
   });
   $(document).on('keyup', '#se-fn', function() {
     isInitialStaff(this);
-    nsoEmpty();
   });
   $(document).on('keyup', '#se-mn', function() {
     isInitialStaff(this);
   });
   $(document).on('keyup', '#se-ln', function() {
     isInitialStaff(this);
-    nsoEmpty();
   });
   $(document).on('change', '#se-dob', function() {
     isInitialStaff(this);
