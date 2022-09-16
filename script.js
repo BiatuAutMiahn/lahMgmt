@@ -592,7 +592,7 @@ $(document).ready(function(){
       var issd=new Date(e.val().replace(/-/, '/'));
       var exp=issd.addDays(doc['Duration']-1);
       console.log(issd,doc['Duration'],exp,formatDate(exp));
-      dede.text(formatDate(exp));
+      dede.val(formatDate(exp));
     }
   });
   $(document).on('keyup', '.docnote', function() {
