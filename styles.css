@@ -463,30 +463,35 @@
   margin: 0 auto;
   border-radius: .375rem;
 }
+
 .tblr-doc-name {
   width: 250px;
   min-width: 250px;
-
 }
 .tblr-doc-status {
   width: 150px;
   min-width: 150px;
+  text-align: center!important;
 }
 .tblr-doc-issued {
   width: 100px;
   min-width: 100px;
+  text-align: center!important;
 }
 .tblr-doc-expires {
   width: 100px;
   min-width: 100px;
+  text-align: center!important;
 }
 .tblr-doc-dur {
   width: 50px;
   min-width: 50px;
+  text-align: center!important;
 }
 .tblr-doc-eta {
   width: 100px;
   min-width: 100px;
+  text-align: center!important;
 }
 .tblr-doc-notes {
   /* max-width: 1em; */
@@ -494,4 +499,5 @@
 }
 .tblr-doc-actions {
   width: 180px;
+  text-align: center!important;
 }
