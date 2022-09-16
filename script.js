@@ -510,6 +510,7 @@ var cmfStaffDlg = function(e){
   var sefn=$('#se-fn');
   var seln=$('#se-ln');
   var nos=false;
+  console.log(sest.val(0));
   if (sest.val()==""){
     nos=true;
   } else {
