@@ -1,3 +1,17 @@
+// https://stackoverflow.com/questions/563406/how-to-add-days-to-date
+// Add Days to Date
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+// Subtract Days from Date
+Date.prototype.subDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() - days);
+    return date;
+}
+
 var now = new Date();
 var tNow = now;
 var tmpl;
@@ -6,12 +20,16 @@ var docs;
 var dynDom={}
 var dpl=true;
 var resolveGlobal;
-var tNull=new Date("1970-01-01T00:00:00.000Z");
 
+// https://stackoverflow.com/questions/33289726/combination-of-async-function-await-settimeout
+// Delay code for x millisec
 var sleep = function(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// https://stackoverflow.com/questions/17732897/difference-between-two-dates-in-years-months-days-in-javascript
+// Custom Variant, Calc difference in date.
+// xYxMxD (YearsMonthsDays)
 var dateDiff = function(startingDate, endingDate) {
   let startDate = moment(startingDate);
   let endDate = moment(endingDate);
@@ -23,7 +41,6 @@ var dateDiff = function(startingDate, endingDate) {
     ret="";
   }
   let duration = moment.duration(endDate.diff(startDate));
-
   if (duration.years()>0) {
     ret=ret+duration.years()+'Y';
   }
@@ -36,13 +53,17 @@ var dateDiff = function(startingDate, endingDate) {
   if (duration.asDays()>0&&duration.asDays()<1){
     ret="Today";
   }
-  return ret;//yearDiff + 'Y' + monthDiff + 'M' + dayDiff + 'D';
+  return ret;
 }
+
+// https://stackoverflow.com/questions/2998784/how-to-output-numbers-with-leading-zeros-in-javascript
 var pad=function(num, size) {
   num = num.toString();
   while (num.length < size) num = "0" + num;
   return num;
 }
+
+// Format Date for Date Input fields.
 var formatDate = function(date) {
   var ret="";
   if (date instanceof Date) {
@@ -50,6 +71,8 @@ var formatDate = function(date) {
   }
   return ret;
 }
+
+// Adds document to Staff's document list.
 var docAdd = function(doc){
   var docrow=$(`
       <tr id="row-staff-doc" class="align-middle drow">
@@ -209,12 +232,13 @@ var docAdd = function(doc){
     $('#doc-other-tbl').append(docrow);
   }
 }
+
+// Load's Staff's Documents
 var loadName = async function(){
   var docc=$('#doc-contain');
   var t=$(this);
   var i=t.data("sid");
   var s=staff[i];
-
   $('.name-tab').removeClass('active');
   t.addClass('active');
   if (dpl) {
@@ -247,12 +271,14 @@ var loadName = async function(){
   docc.css('display','block');
   docc.css('opacity',1);
 }
+// Initialize Notification Dialog.
 var dlgNotify = function(title, msg) {
     var dlg=$("#dlgNotify");
     $("#dlgTitle").html("Select Staff");
     $("#dlgText").html("You must select a staff member to delete.");
     $("#dlgNotify").modal("show");
 }
+// Check if field's value is initial (StaffAdd/StaffEdit)
 var isInitialStaff = function(elem){
   var e=$(elem);
   var re=$('#dlgSave');
@@ -266,6 +292,8 @@ var isInitialStaff = function(elem){
   };
   re.prop( "disabled",dis);
 }
+
+// Reload Staff data from server.
 var reloadData = async function(sel=null){
   $('#nametabs').empty();
   $('#nametabs-term').empty();
@@ -283,6 +311,8 @@ var reloadData = async function(sel=null){
     $('#nametabs-term').scrollTo('#staff-'+sel+' > .name-tab'); */
   }
 }
+
+// Check if field's value is initial (DocumentRow)
 var isInitialDoc = function(elem){
   var e=$(elem);
   var re=e.closest('.drow');
@@ -305,6 +335,8 @@ var isInitialDoc = function(elem){
   dsb.prop( "disabled",dis);
   drb.prop( "disabled",dis);
 }
+
+// PreProcess Staff's Documents
 var procDocs = function(idx){
   var worstDoc = 0;
   var newDocs = {};
@@ -413,6 +445,8 @@ var procDocs = function(idx){
     nti.text("no_accounts");
   }
 }
+
+// Download Data from Server
 var loadData = async function(){
   await jQuery.getJSON("tmpl.json").done(function(data){
       tmpl=data;
@@ -463,6 +497,8 @@ var loadData = async function(){
   $('.name-tab').click(loadName);
   await $('.loading').css("display", "none");
 };
+
+// Checks if field is Empty
 var nsoEmpty = function(e){
   var ie=$('#dlgSave');
   if (e.val()==""){
@@ -471,6 +507,8 @@ var nsoEmpty = function(e){
     ie.prop( "disabled",false);
   }
 }
+
+// Calculate Tenure from Start-End\Today's Date
 var calcTenure = function(){
   var sde=$('#se-sd');
   var ede=$('#se-ed');
