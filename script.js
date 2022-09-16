@@ -92,7 +92,7 @@ var docAdd = function(doc){
               <input id="row-staff-doc-expires" type="date" class="form-control docexpdate"/>
           </div>
         </td>
-        <td id="row-staff-doc-dur" class="text-center docexpeta tblr-doc-dur"></td>
+        <td id="row-staff-doc-dur" class="text-center tblr-doc-dur"></td>
         <td id="row-staff-doc-eta" class="text-center docexpeta tblr-doc-eta"></td>
         <td class="tblr-doc-notes">
           <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
