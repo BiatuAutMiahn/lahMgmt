@@ -526,11 +526,11 @@ var cmfStaffDlg = function(e){
   } else {
     sest.removeClass("form-field-error");
   }
-  if (nos) {
-    ie.prop( "disabled",true);
-  } else {
-    ie.prop( "disabled",false);
-  }
+  // if (nos) {
+  //   ie.prop( "disabled",true);
+  // } else {
+  //   ie.prop( "disabled",false);
+  // }
   return nos;
 }
 
@@ -1276,7 +1276,7 @@ $(document).ready(function(){
       var sest=$('#se-stat');
       var sefn=$('#se-fn');
       var seln=$('#se-ln');
-      if (sest.val()==""){
+      if (sest.val()==-1){
         sest.addClass("form-field-error");
       }
       if (sefn.val()==""){
