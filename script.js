@@ -11,9 +11,6 @@ Date.prototype.subDays = function(days) {
     date.setDate(date.getDate() - days);
     return date;
 }
-$(':input').on('focus', function () {
-  $(this).attr('autocomplete', 'off')
-});
 var now = new Date();
 var tNow = now;
 var tmpl;
@@ -81,7 +78,7 @@ var docAdd = function(doc){
         <td id="row-staff-doc-name" class="tblr-doc-name" scope="row"></td>
         <td class="tblr-doc-notes">
           <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
-            <input id="row-staff-doc-notes" type="text" class="form-control docnote">
+            <input id="row-staff-doc-notes" type="text" class="form-control docnote" autocomplete="off"/>
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
@@ -92,13 +89,13 @@ var docAdd = function(doc){
         </td>
         <td class="tblr-doc-issued">
           <div class="input-group input-group-sm">
-              <input id="row-staff-doc-issued" type="date" class="form-control docissdate"/>
+              <input id="row-staff-doc-issued" type="date" class="form-control docissdate" autocomplete="off"/>
           </div>
         </td>
         <td id="row-staff-doc-dur" class="text-center tblr-doc-dur"></td>
         <td class="tblr-doc-expires">
           <div class="input-group input-group-sm">
-              <input id="row-staff-doc-expires" type="date" class="form-control docexpdate"/>
+              <input id="row-staff-doc-expires" type="date" class="form-control docexpdate" autocomplete="off"/>
           </div>
         </td>
         <td id="row-staff-doc-eta" class="text-center docexpeta tblr-doc-eta"></td>
