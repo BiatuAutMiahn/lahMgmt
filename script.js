@@ -593,6 +593,7 @@ $(document).ready(function(){
       var exp=issd.addDays(doc['Duration']-1);
       console.log(issd,doc['Duration'],exp,formatDate(exp));
       dede.val(formatDate(exp));
+      dede.change();
     }
   });
   $(document).on('keyup', '.docnote', function() {
