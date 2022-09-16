@@ -78,7 +78,7 @@ var docAdd = function(doc){
         <td id="row-staff-doc-name" class="tblr-doc-name" scope="row"></td>
         <td class="tblr-doc-notes">
           <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
-            <input id="row-staff-doc-notes" type="text" class="form-control docnote" autocomplete="off"/>
+            <input id="row-staff-doc-notes" type="text" class="form-control docnote" aria-autocomplete="list"/>
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
@@ -89,13 +89,13 @@ var docAdd = function(doc){
         </td>
         <td class="tblr-doc-issued">
           <div class="input-group input-group-sm">
-              <input id="row-staff-doc-issued" type="date" class="form-control docissdate" autocomplete="off"/>
+              <input id="row-staff-doc-issued" type="date" class="form-control docissdate" aria-autocomplete="list"/>
           </div>
         </td>
         <td id="row-staff-doc-dur" class="text-center tblr-doc-dur"></td>
         <td class="tblr-doc-expires">
           <div class="input-group input-group-sm">
-              <input id="row-staff-doc-expires" type="date" class="form-control docexpdate" autocomplete="off"/>
+              <input id="row-staff-doc-expires" type="date" class="form-control docexpdate" aria-autocomplete="list"/>
           </div>
         </td>
         <td id="row-staff-doc-eta" class="text-center docexpeta tblr-doc-eta"></td>
