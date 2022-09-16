@@ -309,10 +309,10 @@ var reloadData = async function(sel=null){
     e.trigger('click');
     var lb=$('.staff-list');
     pos = e.position().top + (lb.scrollTop() - lb.position().top);
-
     lb.animate({
       scrollTop: pos
     }, 0);
+    loadName(sel);
     /* $('#nametabs').scrollTo('#staff-'+sel+' > .name-tab');
     $('#nametabs-term').scrollTo('#staff-'+sel+' > .name-tab'); */
   }
@@ -1007,7 +1007,7 @@ $(document).ready(function(){
   });
   $(document).on('mouseup', '#staffreload', function() {
     var nte=$('#nametabs');
-    var pe=nte.find('.active');//.closest('.nav-item');
+    var pe=nte.find('.active');
     if (pe.length==0) {
       nte=$('#nametabs-term');
       pe=nte.find('.active');//.closest('.nav-item');
@@ -1018,15 +1018,16 @@ $(document).ready(function(){
     }
     var sid=parseInt(pe[0].id.replace('staff-',''));
     reloadData(sid);
+
   });
   $(document).on('mouseup', '.docsav', function() {
     var e=$(this);
     var re=e.closest('.drow');
     var nte=$('#nametabs');
-    var pe=nte.find('.active');//.closest('.nav-item');
+    var pe=nte.find('.active');
     if (pe.length==0) {
       nte=$('#nametabs-term');
-      pe=nte.find('.active');//.closest('.nav-item');
+      pe=nte.find('.active');
     }
     var nti=pe.find('.material-symbols-outlined');
     var nt=pe.find(".name-tab");
