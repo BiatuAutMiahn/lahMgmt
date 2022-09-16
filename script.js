@@ -11,7 +11,9 @@ Date.prototype.subDays = function(days) {
     date.setDate(date.getDate() - days);
     return date;
 }
-
+$(':input').on('focus', function () {
+  $(this).attr('autocomplete', 'off')
+});
 var now = new Date();
 var tNow = now;
 var tmpl;
