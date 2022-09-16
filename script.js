@@ -577,7 +577,7 @@ $(document).ready(function(){
     var e=$(this);
     var eta=dateDiff(e.val());
     var re=e.closest('.drow');
-    var detae=re.find('.docexpeta');
+    var dede=re.find('.docexpdate');
     var did=parseInt(re.data('docid'));
     var nte=$('#nametabs');
     var pe=nte.find('.active');
@@ -592,7 +592,7 @@ $(document).ready(function(){
       var issd=new Date(e.val().replace(/-/, '/'));
       var exp=issd.addDays(doc['Duration']-1);
       console.log(issd,doc['Duration'],exp,formatDate(exp));
-      detae.text(formatDate(exp));
+      dede.text(formatDate(exp));
     }
   });
   $(document).on('keyup', '.docnote', function() {
