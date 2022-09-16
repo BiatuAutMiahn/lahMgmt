@@ -107,7 +107,7 @@ var docAdd = function(doc){
         </td>
         <td class="text-center tblr-doc-actions">
           <div class="btn-group btn-group-sm" role="group" style="background-color: #fff;border-radius: 4px;">
-            <button type="button" class="btn btn-primary docform" disabled>
+            <button type="button" class="btn btn-secondary docform" disabled>
               <span class="material-symbols-outlined">attach_file</span>
             </button>
             <button type="button" class="btn btn-primary docreset" disabled>
