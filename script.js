@@ -296,6 +296,7 @@ var isInitialStaff = function(elem){
     dis=true;
   };
   re.prop( "disabled",dis);
+  cmfStaffDlg();
 }
 
 // Reload Staff data from server.
@@ -501,6 +502,36 @@ var loadData = async function(){
   $('.name-tab').click(loadName);
   await $('.loading').css("display", "none");
 };
+
+// Checks if field is Empty
+var cmfStaffDlg = function(e){
+  var ie=$('#dlgSave');
+  var sest=$('#se-stat');
+  var sefn=$('#se-fn');
+  var seln=$('#se-ln');
+  var nos=false;
+  if (sest.val()==""){
+    nos=True;
+  } else {
+    sest.removeClass("form-field-error");
+  }
+  if (sefn.val()==""){
+    nos=True;
+  } else {
+    sest.removeClass("form-field-error");
+  }
+  if (seln.val()==""){
+    nos=True;
+  } else {
+    sest.removeClass("form-field-error");
+  }
+  if (nos) {
+    ie.prop( "disabled",true);
+  } else {
+    ie.prop( "disabled",false);
+  }
+  return nos;
+}
 
 // Checks if field is Empty
 var nsoEmpty = function(e){
@@ -1008,7 +1039,7 @@ $(document).ready(function(){
     var pe=nte.find('.active');
     if (pe.length==0) {
       nte=$('#nametabs-term');
-      pe=nte.find('.active');//.closest('.nav-item');
+      pe=nte.find('.active');
       if (pe.length==0) {
         reloadData();
         return
@@ -1242,6 +1273,21 @@ $(document).ready(function(){
     resolveGlobal(false);
   });
   $("#dlgSave").click(function () {
+    if (cmfStaffDlg()){
+      var sest=$('#se-stat');
+      var sefn=$('#se-fn');
+      var seln=$('#se-ln');
+      if (sest.val()==""){
+        sest.addClass("form-field-error");
+      }
+      if (sefn.val()==""){
+        sefn.addClass("form-field-error");
+      }
+      if (seln.val()==""){
+        seln.addClass("form-field-error");
+      }
+      return
+    }
     resolveGlobal(true);
   });
   $("#dlgAdd").click(function () {
