@@ -590,7 +590,7 @@ $(document).ready(function(){
     isInitialDoc(this);
     if (doc.hasOwnProperty("Duration")){
       var issd=new Date(e.val().replace(/-/, '/'));
-      var exp=issd.addDays(doc['Duration']-1);
+      var exp=issd.addDays(doc['Duration']);
       console.log(issd,doc['Duration'],exp,formatDate(exp));
       dede.val(formatDate(exp)).trigger("change");
     }
