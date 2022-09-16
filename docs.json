@@ -9,7 +9,7 @@
                0,
                1
           ],
-          "Duration": 365,
+          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": true,
@@ -24,7 +24,7 @@
                4,
                5
           ],
-          "Duration": 365,
+          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": true,
@@ -37,7 +37,7 @@
                0,
                1
           ],
-          "Duration": 1825,
+          "Duration": 1828,
           "Issued": null,
           "Expires": null,
           "Mandatory": true
@@ -49,7 +49,7 @@
                0,
                1
           ],
-          "Duration": 730,
+          "Duration": 732,
           "Issued": null,
           "Expires": null,
           "Mandatory": true
@@ -61,7 +61,7 @@
                0,
                1
           ],
-          "Duration": 365,
+          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": false,
@@ -75,7 +75,7 @@
                0,
                1
           ],
-          "Duration": 365,
+          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": true
@@ -98,7 +98,7 @@
                0,
                1
           ],
-          "Duration": 365,
+          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": true,
@@ -113,7 +113,7 @@
                4,
                5
           ],
-          "Duration": 365,
+          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": false
@@ -164,7 +164,7 @@
                1
           ],
           "International": 0,
-          "Duration": 730,
+          "Duration": 732,
           "Expires": null,
           "Mandatory": true,
           "Notes": "If staff has +6 pts, cannot transport clients"
@@ -176,7 +176,7 @@
                0,
                1
           ],
-          "Duration": 182.5,
+          "Duration": 184,
           "Issued": null,
           "Expires": null,
           "Mandatory": false
