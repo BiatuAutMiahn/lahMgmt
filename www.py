@@ -196,6 +196,7 @@ def __init__(n,l):
     www_srv = tornado.httpserver.HTTPServer(www_app)
     thWWW = threading.Thread(target=www_loop)
     thWWW.daemon = True
+    # Just before starting web server, preprocess staff.json and set status for all expired docs per staff.
     thWWW.start()
     logging.info("["+node.name+"]:\tInitialized")
 

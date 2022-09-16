@@ -11,7 +11,6 @@ Date.prototype.subDays = function(days) {
     date.setDate(date.getDate() - days);
     return date;
 }
-
 var now = new Date();
 var tNow = now;
 var tmpl;
@@ -79,7 +78,7 @@ var docAdd = function(doc){
         <td id="row-staff-doc-name" class="tblr-doc-name" scope="row"></td>
         <td class="tblr-doc-notes">
           <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
-            <input id="row-staff-doc-notes" type="text" class="form-control docnote">
+            <input id="row-staff-doc-notes" type="text" class="form-control docnote" aria-autocomplete="list"/>
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
@@ -90,13 +89,13 @@ var docAdd = function(doc){
         </td>
         <td class="tblr-doc-issued">
           <div class="input-group input-group-sm">
-              <input id="row-staff-doc-issued" type="date" class="form-control docissdate"/>
+              <input id="row-staff-doc-issued" type="date" class="form-control docissdate" aria-autocomplete="list"/>
           </div>
         </td>
         <td id="row-staff-doc-dur" class="text-center tblr-doc-dur"></td>
         <td class="tblr-doc-expires">
           <div class="input-group input-group-sm">
-              <input id="row-staff-doc-expires" type="date" class="form-control docexpdate"/>
+              <input id="row-staff-doc-expires" type="date" class="form-control docexpdate" aria-autocomplete="list"/>
           </div>
         </td>
         <td id="row-staff-doc-eta" class="text-center docexpeta tblr-doc-eta"></td>
@@ -297,6 +296,7 @@ var isInitialStaff = function(elem){
     dis=true;
   };
   re.prop( "disabled",dis);
+  cmfStaffDlg();
 }
 
 // Reload Staff data from server.
@@ -502,6 +502,37 @@ var loadData = async function(){
   $('.name-tab').click(loadName);
   await $('.loading').css("display", "none");
 };
+
+// Checks if field is Empty
+var cmfStaffDlg = function(e){
+  var ie=$('#dlgSave');
+  var sest=$('#se-stat');
+  var sefn=$('#se-fn');
+  var seln=$('#se-ln');
+  var nos=false;
+  console.log(sest.val(),sefn.val(),seln.val());
+  if (sest.val()==-1){
+    nos=true;
+  } else {
+    sest.removeClass("form-field-error");
+  }
+  if (sefn.val()==""){
+    nos=true;
+  } else {
+    sefn.removeClass("form-field-error");
+  }
+  if (seln.val()==""){
+    nos=true;
+  } else {
+    seln.removeClass("form-field-error");
+  }
+  // if (nos) {
+  //   ie.prop( "disabled",true);
+  // } else {
+  //   ie.prop( "disabled",false);
+  // }
+  return nos;
+}
 
 // Checks if field is Empty
 var nsoEmpty = function(e){
@@ -1009,7 +1040,7 @@ $(document).ready(function(){
     var pe=nte.find('.active');
     if (pe.length==0) {
       nte=$('#nametabs-term');
-      pe=nte.find('.active');//.closest('.nav-item');
+      pe=nte.find('.active');
       if (pe.length==0) {
         reloadData();
         return
@@ -1194,14 +1225,12 @@ $(document).ready(function(){
   });
   $(document).on('keyup', '#se-fn', function() {
     isInitialStaff(this);
-    nsoEmpty();
   });
   $(document).on('keyup', '#se-mn', function() {
     isInitialStaff(this);
   });
   $(document).on('keyup', '#se-ln', function() {
     isInitialStaff(this);
-    nsoEmpty();
   });
   $(document).on('change', '#se-dob', function() {
     isInitialStaff(this);
@@ -1243,6 +1272,21 @@ $(document).ready(function(){
     resolveGlobal(false);
   });
   $("#dlgSave").click(function () {
+    if (cmfStaffDlg()){
+      var sest=$('#se-stat');
+      var sefn=$('#se-fn');
+      var seln=$('#se-ln');
+      if (sest.val()==-1){
+        sest.addClass("form-field-error");
+      }
+      if (sefn.val()==""){
+        sefn.addClass("form-field-error");
+      }
+      if (seln.val()==""){
+        seln.addClass("form-field-error");
+      }
+      return
+    }
     resolveGlobal(true);
   });
   $("#dlgAdd").click(function () {
