@@ -92,6 +92,7 @@ var docAdd = function(doc){
               <input id="row-staff-doc-expires" type="date" class="form-control docexpdate"/>
           </div>
         </td>
+        <td id="row-staff-doc-dur" class="text-center docexpeta tblr-doc-dur"></td>
         <td id="row-staff-doc-eta" class="text-center docexpeta tblr-doc-eta"></td>
         <td class="tblr-doc-notes">
           <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
@@ -129,6 +130,7 @@ var docAdd = function(doc){
   var rsds=docrow.find("#row-staff-doc-status");
   var rsdi=docrow.find("#row-staff-doc-issued");
   var rsde=docrow.find("#row-staff-doc-expires");
+  var rsdd=docrow.find("#row-staff-doc-dur");
   var rsdt=docrow.find("#row-staff-doc-eta");
   var rsdn=docrow.find("#row-staff-doc-notes");
   var rsdnc=docrow.find("#row-staff-doc-note-clear");
@@ -166,9 +168,7 @@ var docAdd = function(doc){
 
   if (doc.hasOwnProperty("Issued")){
     rsdi.val(formatDate(doc['Issued']));
-
   }
-
 
   var noExp=false;
   if (doc.hasOwnProperty("NoExpiry")){
@@ -190,11 +190,15 @@ var docAdd = function(doc){
   } else {
     rsdt.text('-');
   }
+  if (doc.hasOwnProperty("Duration")){
+    rsdd.text(tNow.addDays(doc['Duration']));
+  } else {
+    rsdd.text("-");
+  }
   var isMandatory=true;
   if (doc.hasOwnProperty("Mandatory")){
       isMandatory=doc["Mandatory"];
   }
-
   if (!noExp&&doc.hasOwnProperty("RemainDays")){
     if (doc["RemainDays"]<=0) {
       docrow.addClass('row-alert');
