@@ -519,12 +519,12 @@ var cmfStaffDlg = function(e){
   if (sefn.val()==""){
     nos=true;
   } else {
-    sest.removeClass("form-field-error");
+    sefn.removeClass("form-field-error");
   }
   if (seln.val()==""){
     nos=true;
   } else {
-    sest.removeClass("form-field-error");
+    seln.removeClass("form-field-error");
   }
   // if (nos) {
   //   ie.prop( "disabled",true);
