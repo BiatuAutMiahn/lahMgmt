@@ -275,6 +275,7 @@ var loadName = async function(){
   docc.css('display','block');
   docc.css('opacity',1);
 }
+
 // Initialize Notification Dialog.
 var dlgNotify = function(title, msg) {
     var dlg=$("#dlgNotify");
@@ -282,6 +283,7 @@ var dlgNotify = function(title, msg) {
     $("#dlgText").html("You must select a staff member to delete.");
     $("#dlgNotify").modal("show");
 }
+
 // Check if field's value is initial (StaffAdd/StaffEdit)
 var isInitialStaff = function(elem){
   var e=$(elem);
@@ -542,6 +544,8 @@ var calcTenure = function(){
   // console.log('eta',eta);
   etae.val(eta);
 }
+
+// Initialize
 $(document).ready(function(){
   loadData();
   $(document).on('change', '.docstatussel', function() {
@@ -570,7 +574,26 @@ $(document).ready(function(){
     }
   });
   $(document).on('change', '.docissdate', function() {
+    var e=$(this);
+    var eta=dateDiff(e.val());
+    var re=e.closest('.drow');
+    var detae=re.find('.docexpeta');
+    var did=parseInt(re.data('docid'));
+    var nte=$('#nametabs');
+    var pe=nte.find('.active');
+    if (pe.length==0) {
+      nte=$('#nametabs-term');
+      pe=nte.find('.active');
+    }
+    var sid=parseInt(pe[0].id.replace('staff-',''));
+    var doc=staff[sid]['Documents'][did];
     isInitialDoc(this);
+    if (doc.hasOwnProperty("Duration")){
+      var issd=new Date(e.val().replace(/-/, '/'));
+      var exp=issd.addDays(doc['Duration']);
+      console.log(issd,doc['Duration'],exp);
+      detae.val(exp);
+    }
   });
   $(document).on('keyup', '.docnote', function() {
     isInitialDoc(this);
