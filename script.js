@@ -312,7 +312,6 @@ var reloadData = async function(sel=null){
     lb.animate({
       scrollTop: pos
     }, 0);
-    loadName(sel);
     /* $('#nametabs').scrollTo('#staff-'+sel+' > .name-tab');
     $('#nametabs-term').scrollTo('#staff-'+sel+' > .name-tab'); */
   }
