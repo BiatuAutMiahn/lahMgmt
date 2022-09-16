@@ -191,7 +191,7 @@ var docAdd = function(doc){
     rsdt.text('-');
   }
   if (doc.hasOwnProperty("Duration")){
-    rsdd.text(tNow.addDays(doc['Duration']));
+    rsdd.text(tNow,dateDiff(tNow.addDays(doc['Duration'])));
   } else {
     rsdd.text("-");
   }
