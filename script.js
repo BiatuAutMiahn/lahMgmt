@@ -591,8 +591,8 @@ $(document).ready(function(){
     if (doc.hasOwnProperty("Duration")){
       var issd=new Date(e.val().replace(/-/, '/'));
       var exp=issd.addDays(doc['Duration']-1);
-      console.log(issd,doc['Duration'],exp);
-      detae.val(formatDate(exp));
+      console.log(issd,doc['Duration'],exp,formatDate(exp));
+      detae.text(formatDate(exp));
     }
   });
   $(document).on('keyup', '.docnote', function() {
