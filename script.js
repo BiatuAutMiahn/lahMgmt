@@ -77,6 +77,17 @@ var docAdd = function(doc){
   var docrow=$(`
       <tr id="row-staff-doc" class="align-middle drow">
         <td id="row-staff-doc-name" class="tblr-doc-name" scope="row"></td>
+        <td class="tblr-doc-notes">
+          <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
+            <input id="row-staff-doc-notes" type="text" class="form-control docnote">
+            <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
+              <span class="material-symbols-outlined">close</span>
+            </button>
+            <button id="row-staff-doc-note-edit" type="button" class="btn btn-secondary docnoteedit" disabled>
+              <span class="material-symbols-outlined">edit_note</span>
+            </button>
+          </div>
+        </td>
         <td class="tblr-doc-status">
           <select id="row-staff-doc-status" class="docstatussel form-select form-select-sm" aria-label=".form-select-sm example">
           <option value="-1" hidden></option>
@@ -94,17 +105,6 @@ var docAdd = function(doc){
         </td>
         <td id="row-staff-doc-dur" class="text-center tblr-doc-dur"></td>
         <td id="row-staff-doc-eta" class="text-center docexpeta tblr-doc-eta"></td>
-        <td class="tblr-doc-notes">
-          <div class="input-group input-group-sm" style="background-color: #fff;border-radius: 4px;">
-            <input id="row-staff-doc-notes" type="text" class="form-control docnote">
-            <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
-              <span class="material-symbols-outlined">close</span>
-            </button>
-            <button id="row-staff-doc-note-edit" type="button" class="btn btn-secondary docnoteedit" disabled>
-              <span class="material-symbols-outlined">edit_note</span>
-            </button>
-          </div>
-        </td>
         <td class="text-center tblr-doc-actions">
           <div class="btn-group btn-group-sm" role="group" style="background-color: #fff;border-radius: 4px;">
             <button type="button" class="btn btn-secondary docform" disabled>
