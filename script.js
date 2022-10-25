@@ -387,17 +387,17 @@ var procDocs = function(idx){
     }
     if (doc["RemainDays"]<=0) {
       docExp[0].push(doc)
-      if (isMandatory&&worstDoc<3){
+      if (!noExp&&isMandatory&&worstDoc<3){
         worstDoc=3;
       }
     } else if (doc["RemainDays"]<=15) {
       docExp[1].push(doc)
-      if (isMandatory&&worstDoc<2){
+      if (!noExp&&isMandatory&&worstDoc<2){
         worstDoc=2;
       }
     } else if (doc["RemainDays"]<=30) {
       docExp[2].push(doc)
-      if (isMandatory&&worstDoc<1){
+      if (!noExp&&isMandatory&&worstDoc<1){
         worstDoc=1;
       }
     } else {
