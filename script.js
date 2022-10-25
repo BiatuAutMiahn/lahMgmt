@@ -510,7 +510,7 @@ var cmfStaffDlg = function(e){
   var sefn=$('#se-fn');
   var seln=$('#se-ln');
   var nos=false;
-  console.log(sest.val(),sefn.val(),seln.val());
+  // console.log(sest.val(),sefn.val(),seln.val());
   if (sest.val()==-1){
     nos=true;
   } else {
@@ -621,7 +621,7 @@ $(document).ready(function(){
     if (doc.hasOwnProperty("Duration")){
       var issd=new Date(e.val().replace(/-/, '/'));
       var exp=issd.addDays(doc['Duration']);
-      console.log(issd,doc['Duration'],exp,formatDate(exp));
+      // console.log(issd,doc['Duration'],exp,formatDate(exp));
       dede.val(formatDate(exp)).trigger("change");
     }
   });
@@ -1096,7 +1096,7 @@ $(document).ready(function(){
     data={'Documents':{}};
     var ndi=disd.val();
     var nde=dede.val();
-    console.log(nde);
+    // console.log(nde);
     if (ndi!="") {
       ndi=new Date(ndi.replace(/-/, '/'));
     } else {
@@ -1107,7 +1107,7 @@ $(document).ready(function(){
     } else {
       nde=0;
     }
-    console.log(nde);
+    // console.log(nde);
 
     doc={
         "Status": dsse.val(),
