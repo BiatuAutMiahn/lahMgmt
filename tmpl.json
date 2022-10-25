@@ -1,6 +1,14 @@
 {
   "DB":{
-    "LastModified": "2023-12-29T00:00:00.000Z"    
+    "LastModified": "2023-12-29T00:00:00.000Z"
+  },
+  "Roles": {
+    "0": "Staff",
+    "1": "Caregiver",
+    "2": "Management"
+  },
+  "RoleDocs": {
+    "0": ["0","1","2","3","4","5","8","9","10","11","13","14"]
   },
 	"Staff": {
 		"Status": null,
@@ -46,7 +54,7 @@
 		"2": "Certification",
 		"3": "Licensing"
 	},
-  
+
 	"UserStatus": {
 		"-1": "",
 		"0": "Active",
