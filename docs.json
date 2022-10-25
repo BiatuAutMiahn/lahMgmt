@@ -1,6 +1,7 @@
 {
   "DB":{
-    "LastModified": "2023-12-29T00:00:00.000Z"
+    "LastModified": "2022-10-25T00:00:00.000Z",
+    "DocNextId": 15
   },
      "0": {
           "Name": "DSP Training",
@@ -24,7 +25,6 @@
                4,
                5
           ],
-          "Duration": 367,
           "Issued": null,
           "Expires": null,
           "Mandatory": true,
