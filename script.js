@@ -387,17 +387,17 @@ var procDocs = function(idx){
     }
     if (doc["RemainDays"]<=0) {
       docExp[0].push(doc)
-      if (isMandatory&&worstDoc<3){
+      if (!noExp&&isMandatory&&worstDoc<3){
         worstDoc=3;
       }
     } else if (doc["RemainDays"]<=15) {
       docExp[1].push(doc)
-      if (isMandatory&&worstDoc<2){
+      if (!noExp&&isMandatory&&worstDoc<2){
         worstDoc=2;
       }
     } else if (doc["RemainDays"]<=30) {
       docExp[2].push(doc)
-      if (isMandatory&&worstDoc<1){
+      if (!noExp&&isMandatory&&worstDoc<1){
         worstDoc=1;
       }
     } else {
@@ -510,7 +510,7 @@ var cmfStaffDlg = function(e){
   var sefn=$('#se-fn');
   var seln=$('#se-ln');
   var nos=false;
-  console.log(sest.val(),sefn.val(),seln.val());
+  // console.log(sest.val(),sefn.val(),seln.val());
   if (sest.val()==-1){
     nos=true;
   } else {
@@ -621,7 +621,7 @@ $(document).ready(function(){
     if (doc.hasOwnProperty("Duration")){
       var issd=new Date(e.val().replace(/-/, '/'));
       var exp=issd.addDays(doc['Duration']);
-      console.log(issd,doc['Duration'],exp,formatDate(exp));
+      // console.log(issd,doc['Duration'],exp,formatDate(exp));
       dede.val(formatDate(exp)).trigger("change");
     }
   });
@@ -799,6 +799,8 @@ $(document).ready(function(){
             "Status": sest.val(),
             "StartDate": new Date(sesd.val().replace(/-/, '/')),
             "EndDate": new Date(seed.val().replace(/-/, '/')),
+            "Roles": ["0"],
+            "Documents": {},
             "Name": {
               "First": sefn.val(),
               "Middle": semn.val(),
@@ -823,6 +825,21 @@ $(document).ready(function(){
             },
             "Notes":sen.val()
           }
+          // Add Role-Mandatory Docs
+          var doctmpl={
+              "Status": 5,
+              "Issued": null,
+              "Expires": null,
+              "Mandatory": true,
+              "StaffNote": null
+          }
+          for (var vr in data['Roles']) {
+            for (var vrd of tmpl['RoleDocs'][vr]) {
+              data["Documents"][vrd]=doctmpl;
+            }
+          }
+          // console.log(data);
+          // return;
           $.post("/",{ f: '2', p: JSON.stringify(data) }, async function(ret) {
             if (ret){
               reloadData(ret);
@@ -1079,7 +1096,7 @@ $(document).ready(function(){
     data={'Documents':{}};
     var ndi=disd.val();
     var nde=dede.val();
-    console.log(nde);
+    // console.log(nde);
     if (ndi!="") {
       ndi=new Date(ndi.replace(/-/, '/'));
     } else {
@@ -1090,7 +1107,7 @@ $(document).ready(function(){
     } else {
       nde=0;
     }
-    console.log(nde);
+    // console.log(nde);
 
     doc={
         "Status": dsse.val(),
@@ -1099,7 +1116,6 @@ $(document).ready(function(){
         "Mandatory": true,
         "StaffNote": dne.val()
     };
-    console.log(doc);
     data['Documents'][did]=doc;
     $.post("/",{ f: '3', p: JSON.stringify({id: sid, v: data}) },function(ret) {
       if (ret=="Success"){
