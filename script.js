@@ -82,7 +82,7 @@ var docAdd = function(doc){
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
-            <button id="row-staff-doc-note-edit" type="button" class="btn btn-secondary docnoteedit" disabled>
+            <button id="row-staff-doc-note-edit" type="button" class="btn btn-secondary docnoteedit">
               <span class="material-symbols-outlined">edit_note</span>
             </button>
           </div>
@@ -630,7 +630,7 @@ $(document).ready(function(){
     var e=$(this);
     var re=e.closest('.drow');
     var ie=re.find('.docnoteclear');
-    if (e==""){
+    if (e.val()==""){
       ie.prop( "disabled",true);
     } else {
       ie.prop( "disabled",false);
@@ -643,6 +643,31 @@ $(document).ready(function(){
     ie.val("");
     e.prop("disabled",true);
     isInitialDoc(ie);
+  });
+  $(document).on('mouseup', '.docnoteedit', function() {
+    var e=$(this);
+    var re=e.closest('.drow');
+    var ie=re.find('.docnote');
+    var dned=$("#dlgDocNote");
+    var dndt=dned.find('#sdne-note');
+    dndt.val('');
+    dndt.val(ie.val().replace(/(\u2022)/g,'\n'));
+    promise = new Promise(function (resolve, reject) {
+        var ask_about_flag = true;
+        if (ask_about_flag) {
+            dned.modal("show");
+            resolveGlobal = resolve;
+        } else {
+            resolve(null);
+        }
+    });
+    promise.then(function (v) {
+        dned.modal("hide");
+        if (v) {
+          ie.val(dndt.val().replace(/(\n|\r|\r\n)/g,'\u2022'));
+          ie.trigger('keyup');
+        }
+    });
   });
   $(document).on('mouseup', '.docreset', function() {
     var e=$(this);
@@ -1306,6 +1331,9 @@ $(document).ready(function(){
     resolveGlobal(true);
   });
   $("#dlgAdd").click(function () {
+    resolveGlobal(true);
+  });
+  $("#dlgTrue").click(function () {
     resolveGlobal(true);
   });
   $(".collapsible").click(function () {
