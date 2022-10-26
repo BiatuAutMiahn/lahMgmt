@@ -630,7 +630,7 @@ $(document).ready(function(){
     var e=$(this);
     var re=e.closest('.drow');
     var ie=re.find('.docnoteclear');
-    if (e==""){
+    if (e.val()==""){
       ie.prop( "disabled",true);
     } else {
       ie.prop( "disabled",false);
