@@ -82,7 +82,7 @@ var docAdd = function(doc){
             <button id="row-staff-doc-note-clear" type="button" class="btn btn-secondary docnoteclear" disabled>
               <span class="material-symbols-outlined">close</span>
             </button>
-            <button id="row-staff-doc-note-edit" type="button" class="btn btn-secondary docnoteedit">
+            <button id="row-staff-doc-note-edit" type="button" class="btn btn-primary docnoteedit">
               <span class="material-symbols-outlined">edit_note</span>
             </button>
           </div>
