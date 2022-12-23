@@ -728,6 +728,10 @@ $(document).ready(function(){
           $.post("/",{ f: '5', p: JSON.stringify({id: sid, did: re.data("docid")}) },function(ret) {
             if (ret=="Success"||ret=="DocIdNotFound"){
               re.remove();
+              did=re.data("docid");
+              if (did in staff[sid]['Documents']) {
+                delete staff[sid]['Documents'][did];
+              }
             }
           });
         }
